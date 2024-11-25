@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page1.html</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Bienvenue à Pigier Bénin</h1>
+        <p class="text-center">L'école de référence en matière d'enseignement supérieur professionnel.</p>
+        <br>
+
+        <div class="btn-group btn-group-lg d-flex justify-content-center" role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-outline-primary">Gauche</button>
+            <button type="button" class="btn btn-outline-primary">Milieu</button>
+            <button type="button" class="btn btn-outline-primary">Droite</button>
+        </div>
+        <br>
+
+        <div class="btn-group d-flex justify-content-center" role="group" aria-label="Default button group">
+            <button type="button" class="btn btn-outline-primary">Gauche</button>
+            <button type="button" class="btn btn-outline-primary">Milieu</button>
+            <button type="button" class="btn btn-outline-primary">Droite</button>
+        </div>
+        <br>
+
+        <div class="btn-group btn-group-sm d-flex justify-content-center" role="group" aria-label="Small button group">
+            <button type="button" class="btn btn-outline-primary">Gauche</button>
+            <button type="button" class="btn btn-outline-primary">Milieu</button>
+            <button type="button" class="btn btn-outline-primary">Droite</button>
+        </div>
+
+        <h2 class="mt-5">Informations Personnelles</h2>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom">
+            </div>
+            <div class="form-group">
+                <label for="sexe">Sexe:</label>
+                <select class="form-control" id="sexe">
+                    <option>Homme</option>
+                    <option>Femme</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lieuDateNaissance">Lieu et Date de Naissance:</label>
+                <input type="text" class="form-control" id="lieuDateNaissance" placeholder="Entrez le lieu et la date de naissance">
+            </div>
+            <div class="form-group">
+                <label for="filiere">Filière:</label>
+                <input type="text" class="form-control" id="filiere" placeholder="Entrez votre filière">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Numéro de Téléphone:</label>
+                <input type="tel" class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <input type="text" class="form-control" id="adresse" placeholder="Entrez votre adresse">
+            </div>
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

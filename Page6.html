@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page6.html</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Formulaire de Souhait</h1>
+
+        <form id="souhaitForm" method="post" action="cible_formulaire.php"> 
+            <fieldset class="border p-4 mb-4">
+                <legend class="w-auto">Vos coordonnées</legend>
+
+                <div class="form-group">
+                    <label for="nom">Quel est votre nom ?</label>
+                    <input type="text" class="form-control" name="nom" id="nom" tabindex="10" required />
+                    <div class="error-message" id="nomError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Quel est votre prénom ?</label>
+                    <input type="text" class="form-control" name="prenom" id="prenom" tabindex="20" required />
+                    <div class="error-message" id="prenomError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Quel est votre email ?</label>
+                    <input type="email" class="form-control" name="email" id="email" tabindex="30" required />
+                    <div class="error-message" id="emailError"></div>
+                </div>
+            </fieldset>
+
+            <fieldset class="border p-4 mb-4">
+                <legend class="w-auto">Votre souhait</legend>
+
+                <div class="form-group">
+                    <p>Faites un souhait que vous voudriez voir exaucé :</p>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="souhait" value="riche" id="riche" tabindex="40" required />
+                        <label class="form-check-label" for="riche">Être riche</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="souhait" value="celebre" id="celebre" tabindex="50" />
+                        <label class="form-check-label" for="celebre">Être célèbre</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="souhait" value="intelligent" id="intelligent" tabindex="60" />
+                        <label class="form-check-label" for="intelligent">Être <strong>encore</strong> plus intelligent</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="souhait" value="autre" id="autre" tabindex="70" />
+                        <label class="form-check-label" for="autre">Autre...</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="commentaire">Votre commentaire :</label>
+                    <textarea class="form-control" name="commentaire" id="commentaire" rows="4" tabindex="80"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('souhaitForm').addEventListener('submit', function(event) {
+            // Clear previous error messages
+            document.getElementById('nomError').innerText = '';
+            document.getElementById
+
+
+            document.getElementById('prenomError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+
+            let hasError = false;
+
+            // Validation du nom
+            const nom = document.getElementById('nom').value.trim();
+            if (nom === '') {
+                document.getElementById('nomError').innerText = 'Le nom est obligatoire.';
+                hasError = true;
+            }
+
+            // Validation du prénom
+            const prenom = document.getElementById('prenom').value.trim();
+            if (prenom === '') {
+                document.getElementById('prenomError').innerText = 'Le prénom est obligatoire.';
+                hasError = true;
+            }
+
+            // Validation de l'email
+            const email = document.getElementById('email').value.trim();
+            if (email === '') {
+                document.getElementById('emailError').innerText = 'L\'email est obligatoire.';
+                hasError = true;
+            } else {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    document.getElementById('emailError').innerText = 'Veuillez entrer un email valide.';
+                    hasError = true;
+                }
+            }
+
+            // Si des erreurs sont présentes, empêcher l'envoi du formulaire
+            if (hasError) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
